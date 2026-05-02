@@ -1,0 +1,23 @@
+class Player:
+    def __init__(self, name):
+        self.name = name
+        self._health = 100
+
+    def set_health(self, new_health):
+        if new_health < 0:
+            self._health = 0
+        elif new_health > 100:
+            self._health = 100
+        else:
+            self._health = new_health
+
+player1 = Player("Player1")
+
+player1.set_health(-10)
+print(player1._health)
+
+player1.set_health(50)
+print(player1._health)
+
+player1.set_health(999)
+print(player1._health)
