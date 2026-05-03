@@ -2,6 +2,7 @@ class Player:
     def __init__(self, name):
         self.name = name
         self._health = 100
+        self._xp = 0
 
     def set_health(self, new_health):
         """set health between 0 - 100, and if out of range sets it correctly"""
@@ -14,6 +15,13 @@ class Player:
         else:
             self._health = new_health
 
+    def set_xp(self, new_xp):
+        if new_xp < 0:
+            print("xp should be greater than 0")
+            self._xp = 0
+        else:
+            self._xp = new_xp
+
 player1 = Player("Player1")
 
 player1.set_health(-10)
@@ -24,3 +32,9 @@ print(player1._health)
 
 player1.set_health(999)
 print(player1._health)
+
+player1.set_xp(-50)
+print(player1._xp)
+
+player1.set_xp(150)
+print(player1._xp)
