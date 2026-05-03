@@ -4,9 +4,12 @@ class Player:
         self._health = 100
 
     def set_health(self, new_health):
+        """set health between 0 - 100, and if out of range sets it correctly"""
         if new_health < 0:
+            print('Health too low, setting to 0.')
             self._health = 0
         elif new_health > 100:
+            print('Health too high, setting to 100.')
             self._health = 100
         else:
             self._health = new_health
